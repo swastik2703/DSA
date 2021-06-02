@@ -3,6 +3,7 @@
 void insert();
 void display();
 void delete();
+void peek();
 int front=-1,rear=-1;
 int queue[5];
 int main()
@@ -23,6 +24,9 @@ int main()
             break;
             
             case 3: delete();
+            break;
+            
+            case 4: peek();
             break;
         }
     }
@@ -77,3 +81,16 @@ void delete()
         front++;
     }
 }
+
+void peek()
+{
+    if(front==-1 && rear==-1)
+    {
+        printf("empty\n");
+    }
+    else
+    {
+        printf("the topmost element in the queue is:%d\n",queue[front]);
+    }
+}
+
