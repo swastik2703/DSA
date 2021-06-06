@@ -2,6 +2,8 @@
 #include<stdlib.h>
 void insert();
 void display();
+void delete();
+// void peek();
 #define n 5
 int f=-1,r=-1;
 int queue[n];
@@ -20,6 +22,12 @@ int main()
             
             case 2: display();
             break;
+            
+            case 3: delete();
+            break;
+            
+            // case 4: peek();
+            // break;
         }
     }
 }
@@ -56,10 +64,28 @@ void display()
     else
     {
         printf("the queue is \n");
-        while(i!=r)
+        while(i<=r)
         {
            printf("%d\n",queue[i]);
             i=(i+1)%n;
         }
+    }
+}
+
+void delete()
+
+{
+    if(f==-1 && r==-1)
+    {
+        printf("queue is empty\n");
+    }
+    else if(f==r)
+    {
+        f=r=-1;
+    }
+    else
+    {
+        printf("the deleted element in the queue is: %d\n",queue[f]);
+        f=(f+1)%n;
     }
 }
