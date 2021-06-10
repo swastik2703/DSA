@@ -65,5 +65,6 @@ void display()
             printf("%d\n",temp->data);
             temp=temp->next;
         }
+        printf("%d\n",temp->data);
     }
 }
